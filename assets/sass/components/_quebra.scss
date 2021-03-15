@@ -1,0 +1,70 @@
+& {
+    height: clamp(620px, 100vh, 820px);
+
+    position: relative;
+
+    span {
+        @include bg-props-cover;
+        @include size(100%);
+        display: block;
+        z-index: -1;
+        position: absolute;
+        filter: brightness(.8);
+
+    }
+
+    .text__container {
+        height: clamp(620px, 100vh, 920px);
+
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+
+        h1 {
+            @include texto__foto;
+            text-transform: uppercase;
+            font-family: $poppins;
+            font-size: clamp(24px, 4vw, 42px);
+            line-height: 150%;
+        }
+
+        a {
+            @include botao;
+        }
+
+    }
+
+
+    .img__fundo {
+        background-attachment: fixed;
+    }
+
+    @include d(m) {
+        height: 400px !important;
+
+        .text__container {
+            height: 400px !important;
+
+        }
+    }
+
+    @include d(m) {
+        h1 {
+            font-size: 20px !important;
+            line-height: 150%;
+            text-align: start;
+            align-self: flex-start;
+            max-width: 500px;
+        }
+    }
+
+    span {
+        background-image: url("../img/intro-home.jpg");
+        filter: brightness(0.5);
+
+    }
+}
